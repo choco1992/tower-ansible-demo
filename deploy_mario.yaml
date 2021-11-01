@@ -1,0 +1,7 @@
+---
+- name: "install docker"
+  import_playbook: docker.yaml
+
+- name: "deploy Mario"
+  import_playbook: mario.yaml
+...
