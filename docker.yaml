@@ -1,6 +1,6 @@
 ---
 - name: Install docker on a Centos 7 machine
-  hosts: prod
+  hosts: all
   become: yes
   
   pre_tasks:
