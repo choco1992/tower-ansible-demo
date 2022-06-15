@@ -14,18 +14,18 @@
         - lvm2
         - python3
       
-    - name: download pip script
-      get_url:
-        url: https://bootstrap.pypa.io/get-pip.py
-        dest: /tmp/get-pip.py
+#    - name: download pip script
+#      get_url:
+#        url: https://bootstrap.pypa.io/get-pip.py
+#        dest: /tmp/get-pip.py
 
-    - name: install python-pip
-      command: python3 /tmp/get-pip.py
+#    - name: install python-pip
+#      command: python3 /tmp/get-pip.py
 
     - name: Install docker python
       pip:
         name: docker-py
-        executable: /usr/local/bin/pip3
+        executable: /usr/bin/pip3
         
   tasks:
     - name: Add Docker CE repo
