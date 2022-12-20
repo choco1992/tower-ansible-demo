@@ -1,7 +1,8 @@
 ---
 - name: Install docker on a Centos 7 machine
-  hosts: all
+  hosts: prod
   become: yes
+  tags: docker
   
   pre_tasks:
     - name: Install pre-requisite packages
@@ -14,19 +15,16 @@
         - lvm2
         - python3
       
-#    - name: download pip script
-#      get_url:
-#        url: https://bootstrap.pypa.io/get-pip.py
-#        dest: /tmp/get-pip.py
-
-#    - name: install python-pip
-#      command: python3 /tmp/get-pip.py
-
+    - name: download pip script
+      get_url:
+        url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
+        dest: /tmp/get-pip.py
+    - name: install python-pip
+      command: python3 /tmp/get-pip.py
     - name: Install docker python
       pip:
         name: docker-py
-        executable: /usr/bin/pip3
-        
+        executable: /usr/local/bin/pip3
   tasks:
     - name: Add Docker CE repo
       get_url:
