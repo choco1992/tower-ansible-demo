@@ -1,6 +1,6 @@
 ---
-ansible_user: vagrant
-ansible_ssh_pass: vagrant
+ansible_user: centos
+ansible_ssh_pass: a231e83092beedf5c757691a1e26462a
 ansible_ssh_extra_args: '-o StrictHostKeyChecking=no'
 #ansible_sudo_pass: root
 ...
